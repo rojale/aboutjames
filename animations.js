@@ -1,0 +1,35 @@
+$(document).ready(function(){
+	$('#englink').hover(
+		function(){
+		$(this).stop().animate({'backgroundColor':'#3498db'},150);
+	},
+	function(){
+		$(this).stop().animate({'backgroundColor':'#2c3e50'},150);
+	})
+	$('#codlink').hover(
+		function(){
+		$(this).stop().animate({'backgroundColor':'##2ecc71'},150);
+	},
+	function(){
+		$(this).stop().animate({'backgroundColor':'#2c3e50'},150);
+	})
+	$('#liftlink').hover(
+		function(){
+		$(this).stop().animate({'backgroundColor':'#f39c12'},150);
+	},
+	function(){
+		$(this).stop().animate({'backgroundColor':'#2c3e50'},150);
+	})
+	$('#engcontentwrapper').hover(
+		function(){
+			$('#engcloak').stop().fadeTo(300,1);
+		})
+	$('#codcontentwrapper').hover(
+		function(){
+			$('#codcloak').stop().fadeTo(300,1);
+		})
+	$('#liftcontentwrapper').hover(
+		function(){
+			$('#liftcloak').stop().fadeTo(300,1);
+		})
+})
