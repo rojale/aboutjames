@@ -8,7 +8,7 @@ $(document).ready(function(){
 	})
 	$('#codlink').hover(
 		function(){
-		$(this).stop().animate({'backgroundColor':'##2ecc71'},150);
+		$(this).stop().animate({'backgroundColor':'#2ecc71'},150);
 	},
 	function(){
 		$(this).stop().animate({'backgroundColor':'#2c3e50'},150);
@@ -22,14 +22,17 @@ $(document).ready(function(){
 	})
 	$('#engcontentwrapper').hover(
 		function(){
-			$('#engcloak').stop().fadeTo(300,1);
+			$('#engcloak').fadeTo(300,1);
+			$('#engcontentwrapper h1').animate({'backgroundColor':'#3498db'},1000);
 		})
 	$('#codcontentwrapper').hover(
 		function(){
-			$('#codcloak').stop().fadeTo(300,1);
+			$('#codcloak').fadeTo(300,1);
+			$('#codcontentwrapper h1').animate({'backgroundColor':'#2ecc71'},1000);
 		})
 	$('#liftcontentwrapper').hover(
 		function(){
-			$('#liftcloak').stop().fadeTo(300,1);
+			$('#liftcloak').fadeTo(300,1);
+			$('#liftcontentwrapper h1').animate({'backgroundColor':'#f39c12'},1000);
 		})
 })
