@@ -234,9 +234,33 @@ ul{
 	}
 	#bottom p{
 		color:black;
+		padding-right:25px;
+
 	}
-	#imagebutton{
-		border-right:solid;
+	#contactbox{
+		text-align:center;
+		height:100%;
+		width:100%;
+	}
+	#imagebox{
+		width:100%;
+	}
+}
+
+@media (max-device-width:565px){
+	#bottom{
+		position:relative;
+		margin-left:auto;
+		margin-right:auto;
+		text-align:center;
+		background-color:white;
+		opacity:1;
+		width:300px;
+		margin-bottom:10px;
+	}
+	#bottom p{
+		color:black;
+		padding-right:25px;
 	}
 	#contactbox{
 		text-align:center;
