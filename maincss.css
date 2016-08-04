@@ -117,9 +117,7 @@ ul{
 	height:auto;
 	padding:25px;
 	border-radius:50%;
-	background-color:#D67F46;
-	filter: invert(1);
-	-webkit-filter: invert(1);
+	background-color:#2980b9;
 
 }
 
@@ -175,6 +173,7 @@ ul{
 #imagebox img{
 	width:50px;
 	height:auto;
+	background-color:#2980b9;
 }
 
 #exitcontact{
@@ -264,7 +263,6 @@ ul{
 	}
 	#contactbox{
 		text-align:center;
-		height:100%;
 		width:100%;
 	}
 	#imagebox{
