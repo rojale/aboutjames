@@ -1,0 +1,43 @@
+.piecewrapper{
+	background-color:white;
+	width:750px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.piecewrapper h1{
+	text-align:left;
+	padding:25px;
+}
+.piecetitleline{
+	width:75%;
+	height:2px;
+	background-color:#2980b9;
+	margin-bottom:25px;
+}
+#wilkscontent{
+	background-image: url("programming/wilksslider/bg.png");
+	height:425px;
+}
+.piececontent{
+	
+}
+.piececontentleft{
+	width:400px;
+	float:left;
+	text-align:left;
+	padding-left:10px;
+	background-color:rgba(255, 255, 255,0.85);
+	opacity:0;
+	height:425px;
+}
+.piececontentleft h2{
+	padding-top:10px;
+}
+.piececontentleft a{
+	color:white;
+	font-size:20px;
+	text-align:center;
+	background-color:#2980b9;
+	padding:10px;
+	margin-right:20px;
+}
