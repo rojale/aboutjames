@@ -1,0 +1,18 @@
+$(document).ready(function(){
+	$('#wilkssliderwrapper').hover(function(){
+		$('#wilkscontentleft').fadeTo(200,1);
+		$('#wilkscontent').css('background-image','url(programming/wilksslider/bgfade.png)');
+	},
+	function(){
+		$('#wilkscontentleft').fadeOut(200);
+		$('#wilkscontent').css('background-image','url(programming/wilksslider/bg.png)');
+	})
+	$('#contactbutton').click(
+		function(){
+			$('#contactbox').fadeIn(250);
+		})
+	$('#exitcontact').click(
+		function(){
+			$('#contactbox').fadeOut(250);
+		})
+})

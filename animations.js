@@ -23,17 +23,15 @@ $(document).ready(function(){
 	$('#engiconwrapper').hover(
 		function(){
 			$('#engcloak').fadeTo(300,1);
-			$('#engcontentwrapper h1').animate({'backgroundColor':'#3498db'},1000);
 		})
 	$('#codiconwrapper').hover(
 		function(){
 			$('#codcloak').fadeTo(300,1);
-			$('#codcontentwrapper h1').animate({'backgroundColor':'#2ecc71'},1000);
+			$('#codmorewrapper').fadeTo(1000,1);
 		})
 	$('#lifticonwrapper').hover(
 		function(){
 			$('#liftcloak').fadeTo(300,1);
-			$('#liftcontentwrapper h1').animate({'backgroundColor':'#f39c12'},1000);
 		})
 	$('#contactbutton').click(
 		function(){
