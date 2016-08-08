@@ -1,43 +1,43 @@
-.piecewrapper{
-	background-color:white;
+.piececontent{
+	background-color:transparent;
 	width:750px;
 	margin-left:auto;
 	margin-right:auto;
+	margin-bottom:75px;
 }
-.piecewrapper h1{
+
+.piecebot{
 	text-align:left;
-	padding:25px;
+	margin-top:30px;
+	display:inline-block;
 }
-.piecetitleline{
-	width:75%;
-	height:2px;
-	background-color:#2980b9;
-	margin-bottom:25px;
-}
-#wilkscontent{
-	background-image: url("programming/wilksslider/bg.png");
-	height:425px;
-}
-.piececontent{
-	
-}
-.piececontentleft{
-	width:400px;
+
+.piecetext{
+	width:500px;
 	float:left;
-	text-align:left;
-	padding-left:10px;
-	background-color:rgba(255, 255, 255,0.85);
-	opacity:0;
-	height:425px;
+	background-color:white;
+	padding:20px;
 }
-.piececontentleft h2{
-	padding-top:10px;
+
+.piecetext h1{
+	font-size:21px;
 }
-.piececontentleft a{
-	color:white;
-	font-size:20px;
+.piecetext p{
+	font-size:13px;
+}
+
+.piecelinks{
 	text-align:center;
+	padding:15px 61px;
+	float:right;
+	display:inline-block;
+	margin-left:20px;
+}
+
+.piecelinks a{
+	color:white;
+	padding:5px 10px;
 	background-color:#2980b9;
-	padding:10px;
-	margin-right:20px;
+	display:block;
+	margin-bottom:11px;
 }
