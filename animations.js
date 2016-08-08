@@ -49,4 +49,10 @@ $(document).ready(function(){
 		function(){
 			$('#imagebox').fadeOut(250);
 		})
+	$('.morewrapper a').hover(function(){
+		$(this).css('background-color','#3498dbe');
+	},
+	function(){
+		$(this).css('background-color','#2980b9');
+	})
 })

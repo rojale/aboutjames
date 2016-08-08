@@ -1,12 +1,4 @@
 $(document).ready(function(){
-	$('#wilkssliderwrapper').hover(function(){
-		$('#wilkscontentleft').fadeTo(200,1);
-		$('#wilkscontent').css('background-image','url(programming/wilksslider/bgfade.png)');
-	},
-	function(){
-		$('#wilkscontentleft').fadeOut(200);
-		$('#wilkscontent').css('background-image','url(programming/wilksslider/bg.png)');
-	})
 	$('#contactbutton').click(
 		function(){
 			$('#contactbox').fadeIn(250);
@@ -15,4 +7,10 @@ $(document).ready(function(){
 		function(){
 			$('#contactbox').fadeOut(250);
 		})
+	$('.piecelinks a').hover(function(){
+		$(this).css('background-color','#3498dbe');
+	},
+	function(){
+		$(this).css('background-color','#2980b9');
+	})
 })
