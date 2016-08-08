@@ -41,3 +41,28 @@
 	display:block;
 	margin-bottom:11px;
 }
+
+@media (max-width:750px){
+	.piececontent{
+		width:100%;
+	}
+	.piececontent img{
+		width:500px;
+		height:auto;
+	}
+	.piecebot{
+		text-align:center;
+	}
+	.piecetext{
+		float:none;
+		text-align:left;
+		width:462px;
+	}
+	.piecelinks{
+		float:none;
+	}
+	.piecelinks a{
+		float:left;
+		margin:0 20px;
+	}
+}
