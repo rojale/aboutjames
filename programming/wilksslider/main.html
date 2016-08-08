@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="apparel.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>	<script>
+		function change(origin){
+			//slidebar value changes
+			if (origin==bw){
+				var bwvalue=document.getElementById("bw").value;
+				var bwnum=document.getElementById("bwnum");
+				bwnum.value=bwvalue;
+				//slidebar color changing
+				var bwmax=document.getElementById("bw").max;
+				var percentfill=bwvalue/bwmax;
+				var percentfill=percentfill*100;
+				document.getElementById("bw").style.background="linear-gradient(to right, #e74c3c, #e74c3c "+percentfill+"%, #bebebe "+percentfill+"%, #bebebe)";
+			}
+			else if (origin==bench){
+				var benchvalue=document.getElementById("bench").value;
+				var benchnum=document.getElementById("benchnum");
+				benchnum.value=benchvalue;
+				//slidebar color changing
+				var benchmax=document.getElementById("bench").max;
+				var percentfill=benchvalue/benchmax;
+				var percentfill=percentfill*100;
+				document.getElementById("bench").style.background="linear-gradient(to right, #955ba5, #955ba5 "+percentfill+"%, #bebebe "+percentfill+"%, #bebebe)";
+			}
+			else if (origin==squat){
+				var squatvalue=document.getElementById("squat").value;
+				var squatnum=document.getElementById("squatnum");
+				squatnum.value=squatvalue;
+				//slidebar color changing
+				var squatmax=document.getElementById("squat").max;
+				var percentfill=squatvalue/squatmax;
+				var percentfill=percentfill*100;
+				document.getElementById("squat").style.background="linear-gradient(to right, #26b99a, #26b99a "+percentfill+"%, #bebebe "+percentfill+"%, #bebebe)";
+			}
+			else if (origin==deadlift){
+				var deadliftvalue=document.getElementById("deadlift").value;
+				var deadliftnum=document.getElementById("deadliftnum");
+				deadliftnum.value=deadliftvalue;
+				//slidebar color changing
+				var deadliftmax=document.getElementById("deadlift").max;
+				var percentfill=deadliftvalue/deadliftmax;
+				var percentfill=percentfill*100;
+				document.getElementById("deadlift").style.background="linear-gradient(to right, #3b97d3, #3b97d3 "+percentfill+"%, #bebebe "+percentfill+"%, #bebebe)";
+			}
+			//wilks calculation
+			var boycoeff=[-216.0475144,16.2606339,-0.002388645,-0.00113732,0.00000701863,-0.00000001291];
+			var girlcoeff=[594.31747775582,-27.23842536447,0.82112226871,-0.00930733913,0.00004731582,-0.00000009054];
+			//weight and lift values and weight conversion
+			var bodyweight=Number(document.getElementById("bwnum").value);
+			var benchweight=Number(document.getElementById("benchnum").value);
+			var squatweight=Number(document.getElementById("squatnum").value);
+			var deadliftweight=Number(document.getElementById("deadliftnum").value);
+			var lbvkg=document.getElementById("lbvkg");
+			if (lbvkg.checked){
+				bodyweight=bodyweight/2.20462;
+				benchweight=benchweight/2.20462;
+				squatweight=squatweight/2.20462;
+				deadliftweight=deadliftweight/2.20462;
+			}
+			//coefficient calculation based on gender
+			var boyvgirl=document.getElementById("boyvgirl");
+			if (boyvgirl.checked){
+				var coeff=500/(girlcoeff[0]+girlcoeff[1]*bodyweight+girlcoeff[2]*Math.pow(bodyweight, 2)+girlcoeff[3]*Math.pow(bodyweight, 3)+girlcoeff[4]*Math.pow(bodyweight, 4)+girlcoeff[5]*Math.pow(bodyweight, 5))
+			}
+			else {
+				var coeff=500/(boycoeff[0]+boycoeff[1]*bodyweight+boycoeff[2]*Math.pow(bodyweight, 2)+boycoeff[3]*Math.pow(bodyweight, 3)+boycoeff[4]*Math.pow(bodyweight, 4)+boycoeff[5]*Math.pow(bodyweight, 5))
+			}
+			var wilksscore=document.getElementById("wilksscore");
+			var wilksscore2=document.getElementById("wilksscore2");
+			wilksscore.value=Math.round(coeff*(benchweight+squatweight+deadliftweight));
+			wilksscore2.value=Math.round(coeff*(benchweight+squatweight+deadliftweight));
+
+		}
+	</script>
+</head>
+
+<body>
+
+		<h1 id="title">Wilks Calculator</h1>
+
+	<div>
+		<div class="switchhold">
+			<h3>Unit</h3>
+			<label class="switch">
+			  <input onclick="change()" type="checkbox" id="lbvkg">
+			  <div class="slider round"></div>
+			</label>
+			<div class="switchlabel">
+				<p style="float:left;">kg</p>
+				<p style="float:right;">lb</p>
+			</div>
+		</div>
+		<div class="switchhold">
+			<h3>Gender</h3>
+			<label class="switch">				  <input onclick="change()" type="checkbox" id="boyvgirl">
+			<div class="slider round" id="genderswitch"></div>
+		
+			</label>
+			<div class="switchlabel">
+				<p style="float:left;">M</p>
+				<p style="float:right;">F</p>
+			</div>
+		</div>
+		<div class="secretwilksholder">
+			<h1> Your Wilks Score</h1>
+			<div class="wilkscircle">
+				<form>
+					<input type="text" id="wilksscore" value=149>
+				</form>
+			</div>
+		</div>
+		<div class="bwhold">
+			<form class="sliderform">
+				<table>
+					<tr>
+						<td class="slidetitle">Bodyweight</td>
+						<td><input oninput="change();" onpropertychange="change();" type="text" value=150 id="bwnum"></td>
+					</tr>
+				</table>
+				<div>
+						<input oninput="change(bw)" class="bodyweight" type="range" name="bw" id="bw" value=150 min="0" max="300">
+						<div class="bwruler">
+							<div></div><div>100</div><div>200</div>
+						</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+	</div>
+	<div class="bottomrow">
+		<div class="liftholder">
+			<form>
+				<table>
+					<tr>
+						<td class="slidetitle">Squat</td>
+						<td><input oninput="change();" onpropertychange="change();" type="text" value=100 id="benchnum"></td>
+					</tr>
+				</table>
+				<input oninput="change(bench)" class="barweight" type="range" name="bench" value=100 id="bench" min="0" max="1000">
+				<div class="weightruler">
+					<div></div><div>200</div><div>400</div><div>600</div><div>800</div>
+				</div>
+				
+			</form>
+
+			<form>
+				<table>
+					<tr>
+						<td class="slidetitle">Bench Press</td>
+						<td><input oninput="change();" onpropertychange="change();" type="text" value=100 id="squatnum"></td>
+					</tr>
+				</table>
+				<input oninput="change(squat)" class="barweight" type="range" id="squat" value=100 min="0" max="1000">
+				<div class="weightruler">
+					<div></div><div>200</div><div>400</div><div>600</div><div>800</div>
+				</div>
+			</form>
+
+			<form>
+				<table>
+					<tr>
+						<td class="slidetitle">Deadlift</td>
+						<td><input oninput="change();" onpropertychange="change();" type="text" value=100 id="deadliftnum"></td>
+					</tr>
+				</table>
+				<input oninput="change(deadlift)" class="barweight" type="range" id="deadlift" value=100 min="0" max="1000">
+				<div class="weightruler">
+					<div></div><div>200</div><div>400</div><div>600</div><div>800</div>
+				</div>
+			</form>
+		</div>
+		<div class="wilksholder">
+			<h1> Your Wilks Score</h1>
+			<div class="wilkscircle">
+				<form>
+					<input type="text" id="wilksscore2" value=149>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
