@@ -293,4 +293,10 @@ ul{
 	.cloak{
 		height:625px;
 	}
+	#bottom p{
+		font-size:26px;
+	}
+	.morewrapper a{
+		font-size:40px;
+	}
 }
