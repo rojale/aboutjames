@@ -1,0 +1,55 @@
+.contentwrapper{
+	width:750px;
+	background-color:white;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	padding:25px;
+}
+
+.contentwrapper h2{
+	text-transform:uppercase;
+	padding-bottom:10px;
+	color:#2980b9;
+	font-size:20px;
+}
+
+.keywrapper{
+	text-align:left;
+	float:left;
+	width:175px;
+}
+
+.keywrapper button{
+	margin-left:2px;
+}
+
+.iowrapper{
+	display:inline-block;
+	text-align:left;
+}
+
+.buttonswrapper{
+	float:right;
+	display:inline-block;
+}
+
+.buttonswrapper button{
+	margin:0 5px;
+	margin-top:37px;
+}
+
+input{
+	border-radius:7px;
+	border:solid;
+	margin-bottom:10px;
+	border-color:#ecf0f1;
+
+}
+
+button{
+	background-color:#2980b9;
+	border:none;
+	color:white;
+	padding:10px;
+}
