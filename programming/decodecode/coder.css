@@ -1,10 +1,18 @@
+.maincontent{
+	width:750px;
+}
+
+h3{
+	margin:0;
+	padding:0;
+}
+
 .contentwrapper{
 	width:750px;
-	background-color:white;
 	margin-left:auto;
 	margin-right:auto;
-	margin-bottom:30px;
 	padding:25px;
+	background-color:white;
 }
 
 .contentwrapper h2{
@@ -52,4 +60,28 @@ button{
 	border:none;
 	color:white;
 	padding:10px;
+	cursor:pointer;
+	cursor:hand;
+}
+
+.descriptionwrapper{
+	margin-top:20px;
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:40px;
+}
+
+.descriptiontext{
+	text-align:left;
+	background-color:white;
+	width:550px;
+	padding:25px;
+}
+
+.descriptiontext p{
+	font-size:13px;
+}
+.descriptiontext h3{
+
 }
