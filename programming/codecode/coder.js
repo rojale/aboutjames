@@ -67,7 +67,7 @@ function letterswapcode(){
 	var scramblebase="abcdefghijklmnopqrstuvwxyz".split('')
 	var swapkeytwo= swapkey.toLowerCase().split('');
 	
-	var original = letterswapin.split('');
+	var original = letterswapin.toLowerCase().split('');
 
 	var message = '';
 	for (i=0; i<original.length; i++){
