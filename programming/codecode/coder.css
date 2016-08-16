@@ -1,0 +1,96 @@
+.maincontent{
+	width:750px;
+}
+
+h3{
+	margin:0;
+	padding:0;
+}
+
+.contentwrapper{
+	width:750px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:25px;
+	background-color:white;
+}
+
+.contentwrapper h2{
+	text-transform:uppercase;
+	padding-bottom:10px;
+	color:#2980b9;
+	font-size:20px;
+}
+
+.keywrapper{
+	text-align:left;
+	float:left;
+	width:175px;
+}
+
+.keywrapper button{
+	margin-left:2px;
+}
+
+.iowrapper{
+	display:inline-block;
+	text-align:left;
+}
+
+.buttonswrapper{
+	float:right;
+	display:inline-block;
+}
+
+.buttonswrapper button{
+	margin:0 5px;
+	margin-top:37px;
+}
+
+input{
+	border-radius:7px;
+	border:solid;
+	margin-bottom:10px;
+	border-color:#ecf0f1;
+
+}
+
+button{
+	background-color:#2980b9;
+	border:none;
+	color:white;
+	padding:10px;
+	cursor:pointer;
+	cursor:hand;
+}
+
+.descriptionwrapper{
+	margin-top:20px;
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:40px;
+}
+
+.descriptiontext{
+	text-align:left;
+	background-color:white;
+	width:550px;
+	padding:25px;
+	float:left;
+}
+
+.descriptiontext p{
+	font-size:13px;
+}
+.descriptiontext h3{
+
+}
+
+
+.descriptionimage img{
+	width:100px;
+	height:auto;
+	background-color:white;
+	padding:9px;
+}

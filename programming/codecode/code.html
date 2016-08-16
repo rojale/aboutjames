@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='coder.js'></script>
+	<link rel = "stylesheet" type="text/css" href="coder.css">
+	<link rel = "stylesheet" type="text/css" href = "../../maincss.css">
+</head>
+
+<body>
+
+<div id='decodecode' class='maincontent'>
+		<div class='topheader'>
+			<p>James Zhang</p>
+		</div>
+
+		<div class='contentwrapper'>
+			<div class='keywrapper'>
+				<h2>key</h2>
+				<input type='number' min="1" max="26" id='displaceby'></input>
+			</div>
+			<div class='iowrapper'>
+				<h2>text in</h2>
+				<input type='text' id='simpletextin'></input>
+				<h2>text out</h2>
+				<input type='text' id='simpletextout'></input>
+			</div>
+			<div class='buttonswrapper'>
+				<button id='simplebutton' onclick='simplecode()'>Code</button>
+				<button id='simpledecode' onclick='simpledecode()'>Decode</button>
+			</div>
+
+		</div>
+		<div class='descriptionwrapper'>
+			<div class='descriptiontext'>
+				<h3>Displacement</h3>
+				<p>The simplest method, displacement coding moves each letter down the alphabet by the same numeric value. The obvious weakness with this method is brute force decoding, as only 26 unique combinations are available.</p>
+			</div>
+			<div class='descriptionimage'>
+				<img src="displacement.png"/>
+			</div>
+		</div>
+
+	<div class='contentwrapper'>
+		<div class='keywrapper'>
+			<h2>key</h2>
+			<input type='text' id='letterkey'></input>
+			<button id='letterswapkeygen' onclick='letterswapkeygen()'>Generate</button>
+		</div>
+		<div class='iowrapper'>
+			<h2>text in</h2>
+			<input type='text' id='letterswapin'></input>
+			<h2>text out</h2>
+			<input type='text' id='letterswapout'></input>
+		</div>
+		<div class='buttonswrapper'>
+			<button id='letterswapcode' onclick='letterswapcode()'>Code</button>
+			<button id='letterswapdecode' onclick='letterswapdecode()'>Decode</button>
+		</div>
+	</div>
+		<div class='descriptionwrapper'>
+			<div class='descriptiontext'>
+				<h3>Letter Scramble</h3>
+				<p>By switching each letter in the alphabet with a randomized letter of the alphabet, we increase our number of combinations to about 400000000000000000000000000 (26 factorial). While this is much more secure than the letter displacement from above, it is vulnerable to techniques such as searching for common words.</p>
+			</div>
+			<div class='descriptionimage'>
+				<img src="letterscramble.png"/>
+			</div>
+		</div>
+
+</div>
+</body>
+
+</html>
