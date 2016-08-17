@@ -44,6 +44,10 @@
 	margin-bottom:11px;
 }
 
+#axsourcecontent img{
+	background-color:transparent;
+}
+
 @media (max-width:750px){
 	.piececontent{
 		width:100%;
