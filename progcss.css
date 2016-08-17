@@ -46,6 +46,13 @@
 
 #axsourcecontent img{
 	background-color:transparent;
+	width:735px;
+	height:auto;
+}
+
+#codecodecontent img{
+	width:742px;
+	height:auto;
 }
 
 @media (max-width:750px){
