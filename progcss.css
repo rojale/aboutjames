@@ -46,10 +46,12 @@
 
 #axsourcecontent img{
 	background-color:transparent;
-	width:735px;
+	width:749px;
 	height:auto;
 }
-
+#axsourcetext {
+	width:513px;
+}
 #codecodecontent img{
 	width:742px;
 	height:auto;
