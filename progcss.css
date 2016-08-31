@@ -56,6 +56,9 @@
 	width:742px;
 	height:auto;
 }
+#tkdokutext{
+	width:566px;
+}
 
 @media (max-width:750px){
 	.piececontent{
