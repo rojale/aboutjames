@@ -83,6 +83,12 @@
 		float:left;
 		margin:0 20px;
 	}
+	#tkdokutext{
+	width:462px;
+	}
+	#axsourcetext {
+	width:462px;
+	}
 }
 
 @media (max-device-width:565px){
