@@ -50,9 +50,9 @@ $(document).ready(function(){
 			$('#imagebox').fadeOut(250);
 		})
 	$('.morewrapper a').hover(function(){
-		$(this).css('background-color','#3498dbe');
+		$(this).animate({backgroundColor:'#3498dbe'},200);
 	},
 	function(){
-		$(this).css('background-color','#2980b9');
+		$(this).animate({backgroundColor:'#2980b9'},200);
 	})
 })
