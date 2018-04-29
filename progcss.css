@@ -1,3 +1,7 @@
+.topheader p:hover{
+	color: rgb(52,152,219);
+}
+
 .piececontent{
 	background-color:transparent;
 	width:750px;
@@ -56,8 +60,25 @@
 	width:742px;
 	height:auto;
 }
+#calstatscontent img{
+	width:742px;
+	height:auto;
+}
+#vidmultitrackcontent img{
+	width:742px
+	height:auto;
+}
+#googlebettercontent img{
+	width: 742px;
+	height: auto;
+}
 #tkdokutext{
 	width:566px;
+}
+
+.piececontent img{
+    max-width:750px;
+
 }
 
 @media (max-width:750px){
