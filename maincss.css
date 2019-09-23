@@ -47,6 +47,17 @@ ul {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
 }
+
+canvas{
+  position: absolute;
+  z-index: 1;
+}
+.headercanvas {
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
 .triplecontentwrapper {
   text-align: center;
   margin-left: auto;
