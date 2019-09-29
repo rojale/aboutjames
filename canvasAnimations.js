@@ -80,14 +80,17 @@ class AniObject extends Object {
 
 //treat as stack for easier access of latest
 let aniObjectList = [];
-const maxShapes = 1;
+const maxShapes = 3;
 
 const clearAniObjectList = () => {
   aniObjectList = [];
 };
 
+const removeLastAniObject = () => {
+  aniObjectList = aniObjectList.slice(0, -1);
+};
+
 const newPoint = () => {
-  console.log(aniObjectList);
   if (aniObjectList.length === 0) {
     aniObjectList = aniObjectList.concat(new AniObject());
     setTimeout(newPoint, 5000);
@@ -99,7 +102,7 @@ const newPoint = () => {
     return;
   } //add a new object
   if (aniObjectList.length >= maxShapes) {
-    return;
+    removeLastAniObject();
   } else {
     aniObjectList = [new AniObject()].concat(aniObjectList);
   }
@@ -109,7 +112,7 @@ const newPoint = () => {
 const drawPoint = point => {
   ctx.beginPath();
   ctx.fillStyle = ctx.strokeStyle = point.color;
-  ctx.lineWidth = 1;
+  ctx.lineWidth = 5;
   ctx.arc(point.position.x, point.position.y, 1, 2 * Math.PI, false);
   ctx.fill();
   ctx.stroke();
@@ -134,7 +137,7 @@ const runAnimation = () => {
     });
     ctx.closePath();
     ctx.lineWidth = 1;
-    ctx.fillStyle = ctx.strokeStyle = "grey";
+    ctx.fillStyle = ctx.strokeStyle = "white";
     ctx.lineJoin = "round";
     ctx.stroke();
 
