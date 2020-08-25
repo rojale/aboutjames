@@ -1,8 +1,44 @@
+String.prototype.width = function (font) {
+  var f = font || "Source Sans Pro",
+    o = $("<div></div>")
+      .text(this)
+      .css({
+        position: "absolute",
+        float: "left",
+        "white-space": "nowrap",
+        visibility: "hidden",
+        font: f,
+      })
+      .appendTo($("body")),
+    w = o.width();
+
+  o.remove();
+
+  return w;
+};
 const baseHeader = "James Zhang";
 let currentHeader = baseHeader;
 
-let animQueue = [];
+let queuedAnims = [];
 let running = false;
+
+const runQueuedAnim = () => {
+  if (running || queuedAnims.length === 0) {
+  } else {
+    running = true;
+    setTimeout(queuedAnims[0], 2000);
+    queuedAnims = queuedAnims.slice(1);
+  }
+  requestAnimationFrame(runQueuedAnim);
+};
+runQueuedAnim();
+queueAnim = animFuncConstructor => {
+  queuedAnims = queuedAnims.concat(
+    animFuncConstructor(() => {
+      running = false;
+    })
+  );
+};
 
 if (
   "IntersectionObserver" in window &&
@@ -10,13 +46,19 @@ if (
   "intersectionRatio" in window.IntersectionObserverEntry.prototype
 ) {
   const headerObserver = new IntersectionObserver(
-    (entry) => {
+    entry => {
       const newHeader = getNewHeader(entry);
       if (newHeader === currentHeader) {
         return;
       }
 
-      runAnim(currentHeader, newHeader);
+      const runFunc = createRunAnim(currentHeader, newHeader);
+
+      queueAnim(onComplete => {
+        return () => {
+          runFunc(onComplete);
+        };
+      });
 
       currentHeader = newHeader;
     },
@@ -28,39 +70,77 @@ if (
   );
   const headerObserverTargets = document.querySelectorAll(".piececontent");
 
-  headerObserverTargets.forEach((headerObserverTarget) =>
+  headerObserverTargets.forEach(headerObserverTarget =>
     headerObserver.observe(headerObserverTarget)
   );
 }
 
-const runAnim = (currentHeader, newHeader) => {
-  setHiddenHeader(newHeader);
-  runFadeShift(currentHeader, newHeader);
+const createRunAnim = (currentHeader, newHeader) => {
+  return cb => {
+    runAnim(currentHeader, newHeader, cb);
+  };
 };
 
-const runFadeShift = (currentHeader, newHeader) => {
+const runAnim = (currentHeader, newHeader, cb) => {
+  setHiddenHeader(newHeader);
+  runFadeShift(currentHeader, newHeader, cb);
+};
+
+const setPositionHeader = newHeader => {
+  const positionContainer = getPositionHeaderContainer();
+  setContainerHtmlFromString(newHeader, positionContainer, { idPrefix: "pos" });
+};
+
+const runFadeShift = (currentHeader, newHeader, cb) => {
   const [shiftLetters, fadeLetters] = getLetterDiffs(currentHeader, newHeader);
 
+  applyFadeLetters(fadeLetters);
   applyShiftStyles(shiftLetters);
+  setTimeout(() => replaceDisplayHeader(newHeader, shiftLetters, cb), 750);
 };
 
-applyShiftStyles = (shiftLetters) => {
-    const parentX = document.getElementById('displayheader').getBoundingClientRect().x;
-  shiftLetters.forEach((shiftLetter) => {
-    const spanEl = getDisplayLetter(shiftLetter.currentIndex);
-    const posX = spanEl.getBoundingClientRect().x;
-    console.log({posX, parentX})
-    spanEl.className="shiftLetter"
+const replaceDisplayHeader = (newHeader, shiftLetters, onComplete) => {
+  const displayContainer = getDisplayHeaderContainer();
+  let newInnerHTML = "";
+  Array.from(newHeader).forEach(
+    (newLetter, idx) =>
+      (newInnerHTML += createSpanFromLetter(newLetter, {
+        appliedId: `dis${idx}`,
+        ...(!shiftLetters.some(shiftLetter => shiftLetter.newIndex === idx) && {
+          appliedClasses: "fadeInLetter",
+        }),
+      }))
+  );
 
+  displayContainer.innerHTML = newInnerHTML;
+  onComplete();
+};
+
+const applyFadeLetters = fadeLetters => {
+  fadeLetters.forEach(fadeLetter => {
+    const displaySpan = getDisplayLetter(fadeLetter.currentIndex);
+    displaySpan.className = "fadeOutLetter";
   });
 };
 
-const getDisplayLetter = (idx) => document.getElementById(`dis${idx}`);
+applyShiftStyles = shiftLetters => {
+  shiftLetters.forEach(shiftLetter => {
+    const hiddenSpan = getHiddenSpan(shiftLetter.newIndex);
+    const displaySpan = getDisplayLetter(shiftLetter.currentIndex);
+    const hiddenPosX = hiddenSpan.getBoundingClientRect().x;
+    const displayPosX = displaySpan.getBoundingClientRect().x;
+    displaySpan.className = "shiftLetter";
+    displaySpan.style.transform = `translateX(${hiddenPosX - displayPosX}px)`;
+  });
+};
+
+const getHiddenSpan = idx => document.getElementById(`hid${idx}`);
+const getDisplayLetter = idx => document.getElementById(`dis${idx}`);
 
 const getLetterDiffs = (currentHeader, newHeader) => {
   let morphLetters = [];
   let fadeLetters = [];
-  currentHeader.split("").forEach((currentLetter, currentLetterIndex) => {
+  Array.from(currentHeader).forEach((currentLetter, currentLetterIndex) => {
     const targetIndex = findUnfoundIndex(
       newHeader,
       currentLetter,
@@ -91,7 +171,7 @@ const findUnfoundIndex = (
   const retIndex = inputString.indexOf(currentLetter, startIndex);
   if (retIndex >= 0) {
     if (
-      !existingData.some((morphLetter) => morphLetter.currentIndex === retIndex)
+      !existingData.some(morphLetter => morphLetter.currentIndex === retIndex)
     ) {
       return retIndex;
     } else {
@@ -106,11 +186,9 @@ const findUnfoundIndex = (
   return retIndex;
 };
 
-const setHiddenHeader = (newHeader) => {
+const setHiddenHeader = newHeader => {
   const container = getHiddenHeaderContainer();
-  const positionContainer = getPositionHeaderContainer();
   setContainerHtmlFromString(newHeader, container, { idPrefix: "hid" });
-  setContainerHtmlFromString(newHeader, positionContainer, { idPrefix: "pos" });
 };
 
 const setContainerHtmlFromString = (newString, container, { idPrefix }) => {
@@ -140,7 +218,7 @@ const getHiddenHeaderContainer = () => document.getElementById("hiddenheader");
 const getDisplayHeaderContainer = () =>
   document.getElementById("displayheader");
 
-const getNewHeader = (entries) => {
+const getNewHeader = entries => {
   // skip initialization
   if (entries.length !== 1) {
     return baseHeader;
@@ -172,3 +250,5 @@ const getNewHeader = (entries) => {
     }
   }
 };
+
+setPositionHeader("Javelin's Armory");
