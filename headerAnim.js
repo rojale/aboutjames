@@ -26,7 +26,7 @@ const runQueuedAnim = () => {
   if (running || queuedAnims.length === 0) {
   } else {
     running = true;
-    setTimeout(queuedAnims[0], 2000);
+    setTimeout(queuedAnims[0], 1300);
     queuedAnims = queuedAnims.slice(1);
   }
   requestAnimationFrame(runQueuedAnim);
@@ -39,6 +39,34 @@ queueAnim = animFuncConstructor => {
     })
   );
 };
+const debounce = (func, wait) => {
+  let timeout;
+
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+const addAnim = newHeader => {
+  if (newHeader === currentHeader) {
+    return;
+  }
+  const runFunc = createRunAnim(currentHeader, newHeader);
+  queueAnim(onComplete => {
+    return () => {
+      runFunc(onComplete);
+    };
+  });
+
+  currentHeader = newHeader;
+};
+
+const debouncedAdd = debounce(addAnim, 500);
 
 if (
   "IntersectionObserver" in window &&
@@ -48,19 +76,8 @@ if (
   const headerObserver = new IntersectionObserver(
     entry => {
       const newHeader = getNewHeader(entry);
-      if (newHeader === currentHeader) {
-        return;
-      }
 
-      const runFunc = createRunAnim(currentHeader, newHeader);
-
-      queueAnim(onComplete => {
-        return () => {
-          runFunc(onComplete);
-        };
-      });
-
-      currentHeader = newHeader;
+      debouncedAdd(newHeader);
     },
     {
       root: null,
