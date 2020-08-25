@@ -16,9 +16,9 @@
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 16px;
-
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .headercontainer {
@@ -27,33 +27,45 @@
 
 @keyframes fadeIn {
   from {
-    opacity: 0
-
+    opacity: 0;
   }
   to {
-    opacity: 1
-
+    opacity: 1;
   }
 }
 
 .fadeInLetter {
   animation-name: fadeIn;
-  animation-duration: 1000ms;
+  animation-duration: 500ms;
   animation-delay: 500ms;
   animation-fill-mode: both;
 }
 
-.shiftLetter {
-  position: absolute;
-  transition: transform 500ms ease-in-out;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
+.fadeOutLetter {
+  animation-name: fadeOut;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+}
 
-.headercontainer>div>span {
+.shiftLetter {
+  display: inline-block;
+  transition: transform 500ms ease-in-out;
+  transform: translateX(0);
+}
+
+.headercontainer > div > span {
   color: white;
   font-size: 34px;
 }
-
 
 .positionheader {
   opacity: 0;
@@ -62,12 +74,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: 0;
 }
 
-
 .displayheader {
-  opacity: 0;
   position: absolute;
   left: 0;
   top: 0;
