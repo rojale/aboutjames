@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: rgb(40,40,40);
+}
+
+
+.MainBody {
+  height: 100%;
+  width: 100%;
+}
+
+.NavGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "ResumeNavWrapper ProgrammingNavWrapper HobbyNavWrapper";
+  row-gap: 30px;
+
+}
+
+.navCardWrapper {
+  min-height: 70vh;
+  height: 100%;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+}
+
+#ResumeNavWrapper {
+  grid-area: ResumeNavWrapper;
+}
+#ProgrammingNavWrapper {
+  grid-area: ProgrammingNavWrapper;
+}
+
+#HobbyNavWrapper {
+  grid-area: HobbyNavWrapper;
+}
+
+.NavCard {
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+.NavCard span {
+  color: white;
+}
+
+#ResumeNavCard {
+  animation-delay: 300ms;
+}
+
+#ProgrammingNavCard {
+  animation-delay: 600ms;
+}
+
+#HobbyNavCard {
+  animation-delay: 900ms;
+}
+
+.navCardContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.navCardHeader {
+  font-size: 3em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.navCardText {
+  font-size: 1em;
+  text-align: center;
+}
+
+.navLink {
+  text-decoration: none;
+
+}
+
+.navCardSpacer {
+  flex: 1;
+  opacity: 0;
+}
+
+@media (max-width: 1000px) {
+  .NavGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "ResumeNavWrapper"
+      "ProgrammingNavWrapper"
+      "HobbyNavWrapper";
+  }
+}
