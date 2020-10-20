@@ -1,134 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <title>James Zhang</title>
 
-	<title> James Zhang </title>
+    <link rel="stylesheet" href="indexcss.css" />
+    <link rel="stylesheet" href="sunsetNeon.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>About James</title>
+  </head>
 
-	<link rel='stylesheet' href='maincss.css'>
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-	<script type="text/javascript" src="animations.js"></script>
-	<title>About James</title>
-</head>
-
-<body>
-
-	<div id='home' class='maincontent'>
-		<div class='topheader'>
-			<p>James Zhang</p>
-		</div>
-		<div class='triplecontentwrapper'>
-			<div id='engcontentwrapper'>
-				<div id='engiconwrapper' class='iconwrapper'>
-				<div id='engiconwrapper' class='iconwrapper'>
-					<img src='engicon.png'/>
-				</div>
-				</div>
-				<div id='engcontent'>
-					<div class='cloak' id='engcloak'>
-						<h2>Education</h2>
-						<p>Bachelor of Applied Science</p>
-						<p>Chemical Engineering, University of Waterloo</p>
-						<h2>Experience</h2>
-						<p>Pathcore</p>
-						<p>Southpaw Tech</p>
-						<p>Xerox Research Centre of Canada</p>
-						<p>Siltech Corp.</p>
-						<p>Shell Canada</p>
-						<p>Environment Canada</p>
-						<h2>Certifications</h2>
-						<p>Professional Engineers Ontario - EIT</p>
-						<p>Lean Six Sigma - Yellow Belt</p>
-						<p>Launsby - Statistical Analysis</p>
-						<p>Launsby - Design of Experiments</p>
-					</div>
-					<div id='engmorewrapper' class='morewrapper'>
-						<a href="Resume.pdf">PDF Resume</a>
-					</div>
-
-				</div>
-			</div>
-			<div id='codcontentwrapper'>
-				<div id='codiconwrapper' class='iconwrapper'>
-					<img src='codeicon.png'/>
-				</div>
-				<div  id='codcontent'>
-					<div class='cloak' id='codcloak'>
-							<ul id='codelist'class='triplelist'>
-								<li>HTML</li>
-								<li>CSS</li>
-								<li>Javascript</li>
-								<li>Python</li>
-								<li>React</li>
-								<li>PHP</li>
-								<li>Java</li>
-								<li>PostgreSQL</li>
-								<li>Git</li>
-							</ul>
-
-					</div>
-					<div id='codmorewrapper' class='morewrapper'>
-						<a href="programming.html">Projects</a>
-					</div>
-
-				</div>
-			</div>
-			<div id='liftcontentwrapper'>
-
-				<div id='lifticonwrapper' class='iconwrapper'>
-				<div id='lifticonwrapper' class='iconwrapper'>
-					<img src='lifticon.png'/>
-				</div>
-				</div>
-				<div id='liftcontent'>
-						<div class='cloak' id='liftcloak'>
-						<h2>Videogames</h2>
-						<p>Now Playing:</p>
-						<p>Warframe</p>
-						<p>Slay the Spire</p>
-						<p>Devil May Cry 5</p>
-						<h2>Fitness</h2>
-						<p>Squat</p>
-						<p>185 lb / 84 kg</p>
-						<p>Bench</p>
-						<p>165 lb / 75 kg</p>
-						<p>Deadlift</p>
-						<p>285 lb / 129 kg</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<div id='bottom'>
-		<p id='imagebutton'>Images</p>
-		<p id='contactbutton'>Contact</p>
-	</div>
-	<div id='imagebox'>
-		<div id='exitcontact2'>&#8226 &#8226 &#8226</div>
-		<h3>All images from Project Noun</h3>
-		<table id='imagesrctable'>
-			<tr>
-				<td><img src='engicon.png'/></td>
-				<td>Sascha Elmers</td>
-			</tr>
-			<tr>
-				<td><img src='codeicon.png'/></td>
-				<td>Brian Ejar</td>
-			</tr>
-			<tr>
-				<td><img src='lifticon.png'/></td>
-				<td>Anbaleru Adaleru</td>
-			</tr>
-		</table>
-	</div>
-	<div id='contactbox'>
-		<div id='exitcontact'>&#8226 &#8226 &#8226</div>
-		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqF8YDSbIAgnWncydbewRoxmDuqkrSBhaPbm3u3luncVw_dg/viewform?embedded=true" width="350" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-	</div>
-
-</body>
-
+  <body class="SunsetNeon">
+    <div class="MainBody">
+      <div class="NavGrid">
+        <div class="navCardWrapper" id="ResumeNavWrapper">
+          <div class="NavCard" id="ResumeNavCard">
+            <div class="navCardContent">
+              <span class="navCardHeader"> Education </span>
+              <span class="navCardText"> Bachelor of Applied Science </span>
+              <span class="navCardText">
+                Chemical Engineering, University of Waterloo
+              </span>
+              <span class="navCardHeader"> Experience </span>
+              <span class="navCardText">
+                Chemical Engineering, University of Waterloo
+              </span>
+              <div class="navCardSpacer"></div>
+              <div class="navLinkContainer">
+                <a href="Resume.pdf" class="navLink">PDF Resume</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navCardWrapper" id="ProgrammingNavWrapper">
+          <div class="NavCard" id="ProgrammingNavCard">
+            <div class="navCardContent">
+              <span class="navCardHeader"> Languages </span>
+              <span class="navCardText"> HTML </span>
+              <span class="navCardText"> CSS </span>
+              <span class="navCardText"> Javascript </span>
+              <span class="navCardText"> Python </span>
+              <span class="navCardText"> Rust </span>
+              <span class="navCardHeader"> Frameworks </span>
+              <span class="navCardText"> React </span>
+              <span class="navCardText"> React-Native </span>
+              <span class="navCardText"> Flask </span>
+              <span class="navCardHeader"> Tools </span>
+              <span class="navCardText"> Postgresql </span>
+              <span class="navCardText"> Git </span>
+              <div class="navCardSpacer"></div>
+              <div class="navLinkContainer">
+                <a href="programming.html" class="navLink">Projects</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navCardWrapper" id="HobbyNavWrapper">
+          <div class="NavCard" id="HobbyNavCard">
+            <div class="navCardContent">
+              <span class="navCardHeader"> Education </span>
+              <span class="navCardText"> Bachelor of Applied Science </span>
+              <span class="navCardText">
+                Chemical Engineering, University of Waterloo
+              </span>
+              <span class="navCardHeader"> Experience </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

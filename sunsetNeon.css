@@ -1,0 +1,88 @@
+.SunsetNeon {
+  background: rgb(40, 40, 40);
+}
+
+@keyframes sunsetNavAnim {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.SunsetNeon .NavCard {
+  animation-name: sunsetNavAnim;
+  animation-duration: 400ms;
+  border-radius: 2vh;
+}
+
+.SunsetNeon .NavCard span {
+  color: white;
+}
+
+.SunsetNeon #ResumeNavCard {
+  animation-delay: 300ms;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(to bottom right, #622774 0%, #c53364 100%);
+}
+
+.SunsetNeon #ProgrammingNavCard {
+  animation-delay: 600ms;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(to bottom right, #c53364, #904e95);
+}
+
+.SunsetNeon #HobbyNavCard {
+  animation-delay: 900ms;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(to bottom right, #904e95, #e96443);
+}
+
+.SunsetNeon .navCardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.SunsetNeon .navCardHeader {
+  font-weight: bold;
+}
+.SunsetNeon .navCardText {
+  font-weight: lighter;
+}
+
+.SunsetNeon .navLinkContainer {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.SunsetNeon .navLink {
+  font-size: 1em;
+  flex: 1;
+  text-align: center;
+  padding: 30px;
+  background-color: white;
+  border-radius: 40px;
+  font-weight: bold;
+  transition: transform 300ms ease-in-out;
+}
+
+.SunsetNeon .navLink:hover {
+  transform: scale(1.02, 1.02);
+}
+
+.SunsetNeon .navLink:active {
+    filter: opacity(80%);
+}
+
+.SunsetNeon #ResumeNavCard .navLink {
+  color: #c53364;
+}
+
+.SunsetNeon #ProgrammingNavCard .navLink {
+  color: #904e95;
+}
