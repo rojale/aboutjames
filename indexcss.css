@@ -10,6 +10,43 @@ body {
 .MainBody {
   height: 100%;
   width: 100%;
+  position: relative;
+}
+
+.ThemeSelector {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  display: flex;
+}
+
+.ThemeSelector button {
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
+
+.themeButtonsContainer {
+  width: 0;
+  overflow: hidden;
+  transition: width 300ms ease-in-out;
+  display: flex;
+}
+
+.ThemeSelector:hover .themeButtonsContainer {
+  width: 100%;
+}
+
+.ThemeSelector.expanded .themeButtonsContainer {
+  width: 100%;
+}
+
+.themeButton {
+  margin: 0 15px;
 }
 
 .headerName {
