@@ -4,13 +4,21 @@
   font-family: "Roboto", sans-serif;
 }
 body {
-  background: rgb(40,40,40);
+  background: rgb(40, 40, 40);
 }
-
 
 .MainBody {
   height: 100%;
   width: 100%;
+}
+
+.headerName {
+  font-size: 50px;
+  letter-spacing: 26px;
+  margin: 15px;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  text-align: center;
 }
 
 .NavGrid {
@@ -18,7 +26,6 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "ResumeNavWrapper ProgrammingNavWrapper HobbyNavWrapper";
   row-gap: 30px;
-
 }
 
 .navCardWrapper {
@@ -84,7 +91,6 @@ body {
 
 .navLink {
   text-decoration: none;
-
 }
 
 .navCardSpacer {
