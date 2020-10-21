@@ -1,0 +1,96 @@
+.NeuMorphic {
+  background: #d2dbee;
+}
+
+.NeuMorphic .headerName {
+  color: black;
+}
+
+@keyframes neuMorphicCardLoad {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.01, 1.01);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.NeuMorphic .NavCard {
+  animation-name: neuMorphicCardLoad;
+  animation-duration: 1000ms;
+  border-radius: 2em;
+  background: #d2dbee;
+  box-shadow: inset 9.91px 9.91px 15px #bfc7d9,
+    inset -9.91px -9.91px 15px #e5efff, 9.91px 9.91px 15px #bfc7d9,
+    -9.91px -9.91px 15px #e5efff;
+  border: 3px #d2dbee solid;
+
+  /* box-shadow: 9.91px 9.91px 15px #BFC7D9, -9.91px -9.91px 15px #E5EFFF; */
+}
+
+.NeuMorphic .NavCard span {
+  color: black;
+}
+
+.NeuMorphic #ResumeNavCard {
+  animation-delay: 300ms;
+}
+
+.NeuMorphic #ProgrammingNavCard {
+  animation-delay: 600ms;
+}
+
+.NeuMorphic #HobbyNavCard {
+  animation-delay: 900ms;
+}
+
+.NeuMorphic .navCardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.NeuMorphic .navCardHeader {
+  font-weight: bold;
+}
+.NeuMorphic .navCardText {
+  font-weight: lighter;
+}
+
+.NeuMorphic .navLinkContainer {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.NeuMorphic .navLink {
+  font-size: 1em;
+  flex: 1;
+  text-align: center;
+  padding: 30px;
+  border-radius: 40px;
+  font-weight: bold;
+  transition: transform 300ms ease-in-out;
+  background: #d2dbee;
+  box-shadow: 9.91px 9.91px 15px #bfc7d9, -9.91px -9.91px 15px #e5efff;
+}
+
+.NeuMorphic .navLink:hover {
+  transform: scale(1.02, 1.02);
+}
+
+.NeuMorphic .navLink:active {
+  box-shadow: inset 9.91px 9.91px 15px #bfc7d9,
+    inset -9.91px -9.91px 15px #e5efff, 9.91px 9.91px 15px #bfc7d9,
+    -9.91px -9.91px 15px #e5efff;
+}
+
+.NeuMorphic .navLink {
+  color: black;
+}
+
+.NeuMorphic .navLink {
+  color: black;
+}

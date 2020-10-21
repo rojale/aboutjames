@@ -5,6 +5,7 @@
 }
 body {
   background: rgb(40, 40, 40);
+  font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .MainBody {
@@ -14,12 +15,14 @@ body {
 }
 
 .ThemeSelector {
-  position: absolute;
+  position: sticky;
   top: 15px;
   left: 15px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   display: flex;
+  z-index: 1;
+  width: fit-content;
 }
 
 .ThemeSelector button {
@@ -28,6 +31,7 @@ body {
   font-size: 20px;
   border: none;
   font-family: "Roboto", sans-serif;
+  font-size: 1em;
 }
 
 .themeButtonsContainer {
@@ -46,7 +50,12 @@ body {
 }
 
 .themeButton {
-  margin: 0 15px;
+  margin-left: 15px;
+  padding: 0 5px;
+}
+
+.themeButton.selected {
+  text-decoration: underline;
 }
 
 .headerName {
@@ -116,7 +125,7 @@ body {
 }
 
 .navCardHeader {
-  font-size: 3em;
+  font-size: 2.5em;
   margin-top: 30px;
   margin-bottom: 10px;
   text-align: center;
@@ -128,6 +137,7 @@ body {
 
 .navLink {
   text-decoration: none;
+  font-size: 1em;
 }
 
 .navCardSpacer {
@@ -144,4 +154,13 @@ body {
       "ProgrammingNavWrapper"
       "HobbyNavWrapper";
   }
+  .navCardText {
+    font-size: 1.5em;
+  }
+  .navLink {
+    font-size: 1.5em;
+  }
+.ThemeSelector button {
+  font-size: 1.5em;
+}
 }
