@@ -75,7 +75,6 @@ body {
 }
 
 .navCardWrapper {
-  min-height: 70vh;
   height: 100%;
   margin: 30px;
   display: flex;
