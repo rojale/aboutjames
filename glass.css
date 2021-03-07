@@ -1,5 +1,5 @@
 .GlassMorphic {
-  background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%);
+  background: linear-gradient(to bottom, #82addb 0%, #ebb2b1 100%);
 }
 
 .GlassMorphic .headerName {
@@ -20,17 +20,17 @@
   animation-duration: 500ms;
   animation-fill-mode: forwards;
   border-radius: 2em;
-  background: rgba( 255, 255, 255, 0.30 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 8.0px );
-  -webkit-backdrop-filter: blur( 8.0px );
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
   filter: blur(4px);
 }
 
 .GlassMorphic .NavCard span {
-  color: #1B1464;
+  color: #1b1464;
 }
 
 .GlassMorphic #ResumeNavCard {
@@ -71,12 +71,12 @@
   border-radius: 40px;
   font-weight: bold;
   transition: transform 300ms ease-in-out;
-  background: rgba( 255, 255, 255, 0.30 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 8.0px );
-  -webkit-backdrop-filter: blur( 8.0px );
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .GlassMorphic .navLink:hover {
@@ -84,11 +84,9 @@
 }
 
 .GlassMorphic .navLink:active {
-  box-shadow: inset 9.91px 9.91px 15px #bfc7d9,
-    inset -9.91px -9.91px 15px #e5efff, 9.91px 9.91px 15px #bfc7d9,
-    -9.91px -9.91px 15px #e5efff;
+  filter: brightness(0.8);
 }
 
 .GlassMorphic .navLink {
-  color: #1B1464;
+  color: #1b1464;
 }
