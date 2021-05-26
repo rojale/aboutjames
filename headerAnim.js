@@ -32,7 +32,7 @@ const runQueuedAnim = () => {
   requestAnimationFrame(runQueuedAnim);
 };
 runQueuedAnim();
-queueAnim = animFuncConstructor => {
+queueAnim = (animFuncConstructor) => {
   queuedAnims = queuedAnims.concat(
     animFuncConstructor(() => {
       running = false;
@@ -52,12 +52,12 @@ const debounce = (func, wait) => {
     timeout = setTimeout(later, wait);
   };
 };
-const addAnim = newHeader => {
+const addAnim = (newHeader) => {
   if (newHeader === currentHeader) {
     return;
   }
   const runFunc = createRunAnim(currentHeader, newHeader);
-  queueAnim(onComplete => {
+  queueAnim((onComplete) => {
     return () => {
       runFunc(onComplete);
     };
@@ -74,7 +74,7 @@ if (
   "intersectionRatio" in window.IntersectionObserverEntry.prototype
 ) {
   const headerObserver = new IntersectionObserver(
-    entry => {
+    (entry) => {
       const newHeader = getNewHeader(entry);
 
       debouncedAdd(newHeader);
@@ -87,13 +87,13 @@ if (
   );
   const headerObserverTargets = document.querySelectorAll(".piececontent");
 
-  headerObserverTargets.forEach(headerObserverTarget =>
+  headerObserverTargets.forEach((headerObserverTarget) =>
     headerObserver.observe(headerObserverTarget)
   );
 }
 
 const createRunAnim = (currentHeader, newHeader) => {
-  return cb => {
+  return (cb) => {
     runAnim(currentHeader, newHeader, cb);
   };
 };
@@ -103,7 +103,7 @@ const runAnim = (currentHeader, newHeader, cb) => {
   runFadeShift(currentHeader, newHeader, cb);
 };
 
-const setPositionHeader = newHeader => {
+const setPositionHeader = (newHeader) => {
   const positionContainer = getPositionHeaderContainer();
   setContainerHtmlFromString(newHeader, positionContainer, { idPrefix: "pos" });
 };
@@ -123,7 +123,9 @@ const replaceDisplayHeader = (newHeader, shiftLetters, onComplete) => {
     (newLetter, idx) =>
       (newInnerHTML += createSpanFromLetter(newLetter, {
         appliedId: `dis${idx}`,
-        ...(!shiftLetters.some(shiftLetter => shiftLetter.newIndex === idx) && {
+        ...(!shiftLetters.some(
+          (shiftLetter) => shiftLetter.newIndex === idx
+        ) && {
           appliedClasses: "fadeInLetter",
         }),
       }))
@@ -133,15 +135,15 @@ const replaceDisplayHeader = (newHeader, shiftLetters, onComplete) => {
   onComplete();
 };
 
-const applyFadeLetters = fadeLetters => {
-  fadeLetters.forEach(fadeLetter => {
+const applyFadeLetters = (fadeLetters) => {
+  fadeLetters.forEach((fadeLetter) => {
     const displaySpan = getDisplayLetter(fadeLetter.currentIndex);
     displaySpan.className = "fadeOutLetter";
   });
 };
 
-applyShiftStyles = shiftLetters => {
-  shiftLetters.forEach(shiftLetter => {
+applyShiftStyles = (shiftLetters) => {
+  shiftLetters.forEach((shiftLetter) => {
     const hiddenSpan = getHiddenSpan(shiftLetter.newIndex);
     const displaySpan = getDisplayLetter(shiftLetter.currentIndex);
     const hiddenPosX = hiddenSpan.getBoundingClientRect().x;
@@ -151,8 +153,8 @@ applyShiftStyles = shiftLetters => {
   });
 };
 
-const getHiddenSpan = idx => document.getElementById(`hid${idx}`);
-const getDisplayLetter = idx => document.getElementById(`dis${idx}`);
+const getHiddenSpan = (idx) => document.getElementById(`hid${idx}`);
+const getDisplayLetter = (idx) => document.getElementById(`dis${idx}`);
 
 const getLetterDiffs = (currentHeader, newHeader) => {
   let morphLetters = [];
@@ -188,7 +190,7 @@ const findUnfoundIndex = (
   const retIndex = inputString.indexOf(currentLetter, startIndex);
   if (retIndex >= 0) {
     if (
-      !existingData.some(morphLetter => morphLetter.currentIndex === retIndex)
+      !existingData.some((morphLetter) => morphLetter.currentIndex === retIndex)
     ) {
       return retIndex;
     } else {
@@ -203,7 +205,7 @@ const findUnfoundIndex = (
   return retIndex;
 };
 
-const setHiddenHeader = newHeader => {
+const setHiddenHeader = (newHeader) => {
   const container = getHiddenHeaderContainer();
   setContainerHtmlFromString(newHeader, container, { idPrefix: "hid" });
 };
@@ -235,7 +237,7 @@ const getHiddenHeaderContainer = () => document.getElementById("hiddenheader");
 const getDisplayHeaderContainer = () =>
   document.getElementById("displayheader");
 
-const getNewHeader = entries => {
+const getNewHeader = (entries) => {
   // skip initialization
   if (entries.length !== 1) {
     return baseHeader;
@@ -261,6 +263,8 @@ const getNewHeader = entries => {
       return "Google Better";
     case "notemecontent":
       return "Note Me!";
+    case "nbContent":
+      return "Next Bot";
 
     default: {
       return baseHeader;
