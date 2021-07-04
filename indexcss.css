@@ -4,19 +4,17 @@
     font-family: "Raleway", sans-serif;
 }
 
-html {
-    height: 100%;
-}
-
 body {
     background: rgb(40, 40, 40);
     font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .MainBody {
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .ThemeSelector {
@@ -72,15 +70,15 @@ body {
 }
 
 .NavGrid {
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "ResumeNavWrapper ProgrammingNavWrapper HobbyNavWrapper";
-    row-gap: 30px;
 }
 
 .navCardWrapper {
     height: 100%;
-    margin: 30px;
+    margin: 0 30px;
     display: flex;
     align-items: center;
 }
@@ -156,6 +154,7 @@ body {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas: "ResumeNavWrapper" "ProgrammingNavWrapper" "HobbyNavWrapper";
+        grid-row-gap: 30px;
     }
     .navCardText {
         font-size: 1.5em;
