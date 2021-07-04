@@ -12,7 +12,6 @@ body {
 .MainBody {
     min-height: 100vh;
     width: 100vw;
-
     position: relative;
     display: flex;
     flex-direction: column;
@@ -34,7 +33,7 @@ body {
     color: white;
     font-size: 20px;
     border: none;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .themeButtonsContainer {
@@ -72,6 +71,8 @@ body {
 .NavGrid {
     flex: 1;
     display: grid;
+    box-sizing: border-box;
+    padding-bottom: 15px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "ResumeNavWrapper ProgrammingNavWrapper HobbyNavWrapper";
 }
@@ -134,14 +135,14 @@ body {
 }
 
 .navCardText {
-    font-size: 1em;
+    font-size: 0.8em;
     padding-bottom: 0.2em;
     text-align: center;
 }
 
 .navLink {
     text-decoration: none;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .navCardSpacer {
@@ -155,6 +156,9 @@ body {
         grid-template-columns: 1fr;
         grid-template-areas: "ResumeNavWrapper" "ProgrammingNavWrapper" "HobbyNavWrapper";
         grid-row-gap: 30px;
+    }
+    .navCardHeader {
+        font-size: 2.2em;
     }
     .navCardText {
         font-size: 1.5em;
