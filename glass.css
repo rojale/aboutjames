@@ -1,94 +1,95 @@
 .GlassMorphic {
-  background: linear-gradient(to bottom, #82addb, #ebb2b1);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background: linear-gradient(to bottom, #82addb, #ebb2b1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .GlassMorphic .headerName {
-  color: black;
+    color: #1b1464;
 }
 
 @keyframes glassMorphicCardLoad {
-  0% {
-    filter: blur(4px);
-  }
-  100% {
-    filter: blur(0.05px);
-  }
+    0% {
+        filter: blur(4px);
+    }
+    100% {
+        filter: blur(0.05px);
+    }
 }
 
 .GlassMorphic .NavCard {
-  animation-name: glassMorphicCardLoad;
-  animation-duration: 500ms;
-  animation-fill-mode: forwards;
-  border-radius: 2em;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  filter: blur(4px);
+    animation-name: glassMorphicCardLoad;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    border-radius: 2em;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    filter: blur(4px);
 }
 
 .GlassMorphic .NavCard span {
-  color: #1b1464;
+    color: #1b1464;
 }
 
 .GlassMorphic #ResumeNavCard {
-  animation-duration: 300ms;
+    animation-duration: 300ms;
 }
 
 .GlassMorphic #ProgrammingNavCard {
-  animation-duration: 500ms;
+    animation-duration: 500ms;
 }
 
 .GlassMorphic #HobbyNavCard {
-  animation-duration: 700ms;
+    animation-duration: 700ms;
 }
 
 .GlassMorphic .navCardContent {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .GlassMorphic .navCardHeader {
-  font-weight: bold;
+    font-weight: bold;
 }
+
 .GlassMorphic .navCardText {
-  font-weight: lighter;
+    font-weight: lighter;
 }
 
 .GlassMorphic .navLinkContainer {
-  display: flex;
-  justify-content: center;
-  margin: 30px;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
 }
 
 .GlassMorphic .navLink {
-  font-size: 1em;
-  flex: 1;
-  text-align: center;
-  padding: 30px;
-  border-radius: 40px;
-  font-weight: bold;
-  transition: transform 300ms ease-in-out;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 1em;
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    border-radius: 40px;
+    font-weight: bold;
+    transition: transform 300ms ease-in-out;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .GlassMorphic .navLink:hover {
-  transform: scale(1.02, 1.02);
+    transform: scale(1.02, 1.02);
 }
 
 .GlassMorphic .navLink:active {
-  filter: brightness(0.8);
+    filter: brightness(0.8);
 }
 
 .GlassMorphic .navLink {
-  color: #1b1464;
+    color: #1b1464;
 }
