@@ -1,168 +1,169 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
 }
+
 html {
-  height: 100%;
+    height: 100%;
 }
+
 body {
-  background: rgb(40, 40, 40);
-  font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    background: rgb(40, 40, 40);
+    font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .MainBody {
-  height: 100%;
-  width: 100%;
-  position: relative;
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
 
 .ThemeSelector {
-  position: sticky;
-  top: 15px;
-  left: 15px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  display: flex;
-  z-index: 1;
-  width: fit-content;
+    display: none;
+    position: sticky;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    z-index: 1;
+    width: fit-content;
 }
 
 .ThemeSelector button {
-  background-color: transparent;
-  color: white;
-  font-size: 20px;
-  border: none;
-  font-size: 1em;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border: none;
+    font-size: 1em;
 }
 
 .themeButtonsContainer {
-  width: 0;
-  overflow: hidden;
-  transition: width 300ms ease-in-out;
-  display: flex;
+    width: 0;
+    overflow: hidden;
+    transition: width 300ms ease-in-out;
+    display: flex;
 }
 
 .ThemeSelector:hover .themeButtonsContainer {
-  width: fit-content;
+    width: fit-content;
 }
 
 .ThemeSelector.expanded .themeButtonsContainer {
-  width: fit-content;
+    width: fit-content;
 }
 
 .themeButton {
-  margin-left: 15px;
-  padding: 0 5px;
+    margin-left: 15px;
+    padding: 0 5px;
 }
 
 .themeButton.selected {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .headerName {
-  font-size: 2em;
-  letter-spacing: 26px;
-  margin: 15px;
-  margin-top: 0;
-  color: white;
-  text-align: center;
+    font-size: 2em;
+    letter-spacing: 26px;
+    margin: 15px;
+    margin-top: 0;
+    color: white;
+    text-align: center;
 }
 
 .NavGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "ResumeNavWrapper ProgrammingNavWrapper HobbyNavWrapper";
-  row-gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "ResumeNavWrapper ProgrammingNavWrapper HobbyNavWrapper";
+    row-gap: 30px;
 }
 
 .navCardWrapper {
-  height: 100%;
-  margin: 30px;
-  display: flex;
-  align-items: center;
+    height: 100%;
+    margin: 30px;
+    display: flex;
+    align-items: center;
 }
 
 #ResumeNavWrapper {
-  grid-area: ResumeNavWrapper;
+    grid-area: ResumeNavWrapper;
 }
+
 #ProgrammingNavWrapper {
-  grid-area: ProgrammingNavWrapper;
+    grid-area: ProgrammingNavWrapper;
 }
 
 #HobbyNavWrapper {
-  grid-area: HobbyNavWrapper;
+    grid-area: HobbyNavWrapper;
 }
 
 .NavCard {
-  flex: 1;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 60px;
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 60px;
 }
 
 .NavCard span {
-  color: white;
+    color: white;
 }
 
 #ResumeNavCard {
-  animation-delay: 300ms;
+    animation-delay: 300ms;
 }
 
 #ProgrammingNavCard {
-  animation-delay: 600ms;
+    animation-delay: 600ms;
 }
 
 #HobbyNavCard {
-  animation-delay: 900ms;
+    animation-delay: 900ms;
 }
 
 .navCardContent {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .navCardHeader {
-  font-size: 1.5em;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  text-align: center;
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
 }
+
 .navCardText {
-  font-size: 1em;
-  padding-bottom: 0.2em;
-  text-align: center;
+    font-size: 1em;
+    padding-bottom: 0.2em;
+    text-align: center;
 }
 
 .navLink {
-  text-decoration: none;
-  font-size: 1em;
+    text-decoration: none;
+    font-size: 1em;
 }
 
 .navCardSpacer {
-  flex: 1;
-  opacity: 0;
+    flex: 1;
+    opacity: 0;
 }
 
 @media (max-width: 1000px) {
-  .NavGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "ResumeNavWrapper"
-      "ProgrammingNavWrapper"
-      "HobbyNavWrapper";
-  }
-  .navCardText {
-    font-size: 1.5em;
-  }
-  .navLink {
-    font-size: 1.5em;
-  }
-.ThemeSelector button {
-  font-size: 1.5em;
-}
+    .NavGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "ResumeNavWrapper" "ProgrammingNavWrapper" "HobbyNavWrapper";
+    }
+    .navCardText {
+        font-size: 1.5em;
+    }
+    .navLink {
+        font-size: 1.5em;
+    }
+    .ThemeSelector button {
+        font-size: 1.5em;
+    }
 }
