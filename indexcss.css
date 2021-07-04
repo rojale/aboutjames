@@ -12,6 +12,7 @@ body {
 .MainBody {
     min-height: 100vh;
     width: 100vw;
+
     position: relative;
     display: flex;
     flex-direction: column;
