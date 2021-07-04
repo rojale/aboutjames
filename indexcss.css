@@ -11,7 +11,8 @@ body {
 
 .MainBody {
     min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw;
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -64,7 +65,6 @@ body {
     font-size: 2em;
     letter-spacing: 26px;
     margin: 30px;
-    margin-top: 0;
     color: white;
     text-align: center;
 }
