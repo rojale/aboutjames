@@ -1,0 +1,25 @@
+* {
+    color: #1b1464
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 90% 1fr;
+}
+
+.contentList {
+    display: flex;
+    flex-direction: column;
+}
+
+.contentSection {
+    display: flex;
+    height: 2000px;
+    padding: 20px;
+}
+
+.contentTitle {
+    position: sticky;
+    padding: 10px;
+    top: 0;
+}
