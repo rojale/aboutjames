@@ -1,9 +1,3 @@
-.GlassMorphic {
-    background: linear-gradient(to bottom, #82addb, #ebb2b1);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
 .GlassMorphic .headerName {
     color: #1b1464;
 }

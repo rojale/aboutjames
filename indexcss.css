@@ -5,7 +5,9 @@
 }
 
 body {
-    background: rgb(40, 40, 40);
+    background: linear-gradient(to bottom, #82addb, #ebb2b1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
